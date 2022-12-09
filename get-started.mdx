@@ -1,0 +1,92 @@
+---
+title: "Get Started to your Blockbud Journey"
+description: "Welcome to the Blockbud. Before starting, we expect you to registered & confirmed your e-mail before following this tutorial."
+publishedAt: "2022-04-16"
+excerpt: "Dont be afraid."
+cover_image: "/images/text.png"
+author: "schwarzsky"
+---
+
+### Prerequistes
+
+- A Map/Model under 〜10MB file size
+- Mineways `for maps`
+- Blender or Cinema4D or Blockbud Workshop `for those who don't have *.GLB extension Model`
+
+What our model looks like:
+
+<figure>
+  <img src="https://i.imgur.com/ji4cKxP.png" alt="Snowy" />
+  <figcaption>Build by @Freya</figcaption>
+</figure>
+
+### Roadmap
+
+<iframe
+  width="100%"
+  height="600px"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FZQYYxjAMLuo4keuw1EuseD%2FBlockbud---Get-Started%3Fnode-id%3D0%253A1"
+  allowfullscreen
+></iframe>
+
+For interested people [there is a full Mineways documentation about issues & options](http://www.realtimerendering.com/erich/minecraft/public/mineways/mineways.html)
+
+### Common issues
+
+- If your model have lines between blocks:<br/>
+  ↓ While exporting Model from Mineways, be sure "Export individual textures to `tex`" is selected
+  <img src="https://soo.gg/u/YjdN6jSO.png" alt="Export Settings @ Mineways" />
+
+<figure>
+  <img
+    src="https://images-ext-2.discordapp.net/external/pPYBnJpuQ_lSqTTFifJnNIf2Ah12NUuoo-u4-oWfl8s/https/soo.gg/u/m5Vnc307.png"
+    alt="Lines between blocks"
+  />
+  <figcaption>Before -> You can notice lines between blocks</figcaption>
+</figure>
+
+<figure>
+  <img
+    src="https://images-ext-1.discordapp.net/external/gY-DjD-jywYyN9t6PmiFvYZ_dEEcNysFbpYiUETcM7o/https/soo.gg/u/qSXOsgpG.png"
+    alt="Lines between blocks"
+  />
+  <figcaption>After -> There is no lines between blocks</figcaption>
+</figure>
+
+### Scripting
+
+**From now, we will use Blender's scripting abilities to make our task easier.**
+
+We are still working on some workshop abilities to make your job easier, some tasks are still in development & looks hopeful. We will announce when the magic🧙 comes out. In first term, we are researching if there is a way to solve this problems in our engine directly, if not: we are developing a workshop task to achieve & publish to our users. We call it magik🪄
+
+- Textures are blurry<br/>
+  ↓ If you are using Blender as exporter, setting texture sampling option in material to be "Closest" solves the issue. However Mineways have a script for that to be easy for not changing all block materials one-by-one manually.
+
+```py
+import bpy
+
+for mat in bpy.data.materials:
+    if not mat.node_tree:
+        continue
+    for node in mat.node_tree.nodes:
+        if node.type == 'TEX_IMAGE':
+            node.interpolation = 'Closest'
+```
+
+// Image
+
+- For best Glass Texture, set Blend & Shadow mode to Alpha Hashed
+
+```py
+import bpy
+
+for mat in bpy.data.materials:
+    """If material has nodetree"""
+    if mat.node_tree:
+        for node in mat.node_tree.nodes:
+            if node.type == 'BSDF_PRINCIPLED':
+                alphasocket = node.inputs["Alpha"]
+                if alphasocket.is_linked:
+                    mat.blend_method = 'HASHED'
+                    mat.shadow_method = 'HASHED'
+```

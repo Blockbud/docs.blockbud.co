@@ -1,0 +1,47 @@
+{
+  "name": "Blockbud",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#7C3AED",
+    "light": "#BA97F5",
+    "dark": "#4F3292",
+    "ultraLight": "#E5D8FB",
+    "ultraDark": "#212A36",
+    "anchors": {
+      "from": "#5b21B6",
+      "to": "#A21CAF"
+    }
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/Blockbud/docs.blockbud.co"
+  },
+  "anchors": [
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://blockbud.co/discord"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/Blockbud/docs.blockbud.co.git"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Home",
+      "pages": ["introduction", "get-started"]
+    }
+  ],
+  "backgroundImage": "/background.png",
+  "footerSocials": {
+    "website": "https://blockbud.co",
+    "discord": "https://blockbud.co/discord",
+    "github": "https://github.com/Blockbud/docs.blockbud.co.git"
+  }
+}
