@@ -35,7 +35,7 @@
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction", "get-started"]
+      "pages": ["introduction", "get-started", "common-issues"]
     }
   ],
   "backgroundImage": "/background.png",

@@ -1,0 +1,62 @@
+---
+title: "Common Issues"
+description: "Common Issues with DO'S/DON'TS."
+publishedAt: "2022-04-16"
+excerpt: "Common Issues with DO'S/DON'TS."
+cover_image: "/images/text.png"
+author: "schwarzsky"
+---
+
+Let's make sure you checked this document before sending a message on anywhere about an issue.
+
+### Blender
+- If your textures looks blurry:<br/>
+  ↓ In Blender, make sure every block interpolation is set to "Closest": no worry, you don't have to make every texture one by one. There is a Blender script for this:
+  <img src="https://i.imgur.com/VAs60XC.png" alt="Texture Interpolation @ Blender" />
+
+```py Blurry Script
+import bpy
+
+for mat in bpy.data.materials:
+    if not mat.node_tree:
+        continue
+    for node in mat.node_tree.nodes:
+        if node.type == 'TEX_IMAGE':
+            node.interpolation = 'Closest'
+```
+
+<figure>
+  <img
+    src="https://i.imgur.com/2cUYgOi.png"
+    alt="Blurry Blocks"
+  />
+  <figcaption>Before -> Blurry</figcaption>
+</figure>
+
+<figure>
+  <img
+    src="https://i.imgur.com/S3Hj8Mb.png"
+    alt="Sharp Blocks"
+  />
+  <figcaption>After -> Sharp & Shine!</figcaption>
+</figure>
+
+- If your model have lines between blocks:<br/>
+  ↓ While exporting Model from Mineways, be sure "Export individual textures to `tex`" is selected
+  <img src="https://soo.gg/u/YjdN6jSO.png" alt="Export Settings @ Mineways" />
+
+<figure>
+  <img
+    src="https://images-ext-2.discordapp.net/external/pPYBnJpuQ_lSqTTFifJnNIf2Ah12NUuoo-u4-oWfl8s/https/soo.gg/u/m5Vnc307.png"
+    alt="Lines between blocks"
+  />
+  <figcaption>Before -> You can notice lines between blocks</figcaption>
+</figure>
+
+<figure>
+  <img
+    src="https://images-ext-1.discordapp.net/external/gY-DjD-jywYyN9t6PmiFvYZ_dEEcNysFbpYiUETcM7o/https/soo.gg/u/qSXOsgpG.png"
+    alt="Lines between blocks"
+  />
+  <figcaption>After -> There is no lines between blocks</figcaption>
+</figure>
