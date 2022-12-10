@@ -12,7 +12,7 @@ Let's make sure you checked this document before sending a message on anywhere a
 ### Blender
 - If your textures looks blurry:<br/>
   ↓ In Blender, make sure every block interpolation is set to "Closest": no worry, you don't have to make every texture one by one. There is a Blender script for this:
-  <img src="https://i.imgur.com/VAs60XC.png" alt="Texture Interpolation @ Blender" />
+  <Frame><img src="https://i.imgur.com/VAs60XC.png" alt="Texture Interpolation @ Blender" /></Frame>
 
 ```py Blurry Script
 import bpy
@@ -24,22 +24,17 @@ for mat in bpy.data.materials:
         if node.type == 'TEX_IMAGE':
             node.interpolation = 'Closest'
 ```
-
-<figure>
+Before -> Blurry
   <img
     src="https://i.imgur.com/2cUYgOi.png"
     alt="Blurry Blocks"
   />
-  <figcaption>Before -> Blurry</figcaption>
-</figure>
 
-<figure>
+After -> Sharp & Shine!
   <img
     src="https://i.imgur.com/S3Hj8Mb.png"
     alt="Sharp Blocks"
   />
-  <figcaption>After -> Sharp & Shine!</figcaption>
-</figure>
 
 
 ### Mineways
@@ -47,18 +42,14 @@ for mat in bpy.data.materials:
   ↓ While exporting Model from Mineways, be sure "Export individual textures to `tex`" is selected
   <img src="https://soo.gg/u/YjdN6jSO.png" alt="Export Settings @ Mineways" />
 
-<figure>
+Before -> You can notice lines between blocks
   <img
     src="https://images-ext-2.discordapp.net/external/pPYBnJpuQ_lSqTTFifJnNIf2Ah12NUuoo-u4-oWfl8s/https/soo.gg/u/m5Vnc307.png"
     alt="Lines between blocks"
   />
-  <figcaption>Before -> You can notice lines between blocks</figcaption>
-</figure>
 
-<figure>
+After -> There is no lines between blocks
   <img
     src="https://images-ext-1.discordapp.net/external/gY-DjD-jywYyN9t6PmiFvYZ_dEEcNysFbpYiUETcM7o/https/soo.gg/u/qSXOsgpG.png"
     alt="Lines between blocks"
   />
-  <figcaption>After -> There is no lines between blocks</figcaption>
-</figure>
