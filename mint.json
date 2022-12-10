@@ -39,7 +39,7 @@
     },
     {
       "group": "Getting Started",
-      "pages": ["quick-start", "mineways-tutorial"]
+      "pages": ["quick-start", "using-mineways"]
     },
     {
       "group": "Resources",
