@@ -34,8 +34,12 @@
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "get-started"]
+      "group": "Welcome",
+      "pages": ["introduction"]
+    },
+    {
+      "group": "Getting Started",
+      "pages": ["quick-start"]
     },
     {
       "group": "Resources",
