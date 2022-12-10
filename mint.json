@@ -1,8 +1,8 @@
 {
   "name": "Blockbud",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/assets/logo/light.svg",
+    "dark": "/assets/logo/dark.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -35,10 +35,14 @@
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction", "get-started", "common-issues"]
+      "pages": ["introduction", "get-started"]
+    },
+    {
+      "group": "Resources",
+      "pages": ["common-issues"]
     }
   ],
-  "backgroundImage": "/background.png",
+  "backgroundImage": "/assets/background.png",
   "footerSocials": {
     "website": "https://blockbud.co",
     "discord": "https://blockbud.co/discord",
