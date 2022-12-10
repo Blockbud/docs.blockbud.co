@@ -39,7 +39,11 @@
     },
     {
       "group": "Getting Started",
-      "pages": ["quick-start", "using-mineways"]
+      "pages": ["quick-start"]
+    },
+    {
+      "group": "Tools Handbook",
+      "pages": ["using-mineways", "using-blockbench", "using-blender"]
     },
     {
       "group": "Resources",
